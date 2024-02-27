@@ -20,7 +20,6 @@ class FileUtilsTest {
     @Test
     void testWhenInputFileNotValidDataFormat() {
         assertThat(FileUtils.getDataFormat(NOT_A_FILE_PATH)).isNotEmpty()
-                .hasSize(4)
                 .doesNotContain("json", "yaml")
                 .isEqualTo("file");
     }
