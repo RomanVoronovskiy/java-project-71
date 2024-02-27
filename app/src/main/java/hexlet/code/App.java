@@ -34,7 +34,8 @@ public class App implements Callable<Integer> {
     @Override
     public final Integer call() {
         try {
-            System.out.println(Differ.generate(firstFilePath, secondFilePath, format));
+           String result = Differ.generate(firstFilePath, secondFilePath, format);
+            System.out.println(result);
             return 0;
         } catch (Exception e) {
             System.out.println(e.getMessage());
