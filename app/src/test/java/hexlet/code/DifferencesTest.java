@@ -20,6 +20,17 @@ class DifferencesTest {
     private static final String STR_YAML_PATH_2 = "src/test/resources/yaml/yaml2.yml";
     private static final String JSON_FORMAT = "json";
     private static final String YAML_FORMAT = "yaml";
+    public static final int TWENTY_TWO = 22;
+    public static final int THREE = 3;
+    public static final int THIRTY_THREE = 33;
+    public static final int FOUR = 4;
+    public static final int FORTY_FOUR = 44;
+    public static final int FORTY_FIVE = 45;
+    public static final int FIFTY_FIVE = 55;
+    public static final int FIVE = 5;
+    public static final int SIX = 6;
+    public static final int TWO_HUNDRED = 200;
+    public static final int THREE_HUNDRED = 300;
 
     private static Map<String, Object> jsonExpectedDataOne;
     private static Map<String, Object> jsonExpectedDataTwo;
@@ -38,39 +49,29 @@ class DifferencesTest {
         yamlExpectedDataOne = Parser.getData(yamlExpectedContentOne, YAML_FORMAT);
         yamlExpectedDataTwo = Parser.getData(yamlExpectedContentTwo, YAML_FORMAT);
         expectedMap = new LinkedHashMap<>();
-        int fourFive = 45;
-        int twentyTwo = 22;
-        int three = 3;
-        int thirtyThree = 33;
-        int four = 4;
-        int fortyFour = 44;
-        int fiftyFive = 55;
-        int five = 5;
-        int six = 6;
-        int twoHundred = 200;
-        int threeHundred = 300;
+
         expectedMap.put("chars1", new Item(Arrays.asList("a", "b", "c"), Arrays.asList("a", "b", "c"), "unchanged"));
         expectedMap.put("chars2", new Item(Arrays.asList("d", "e", "f"), false, "changed"));
         expectedMap.put("checked", new Item(false, true, "changed"));
         expectedMap.put("default", new Item(null, Arrays.asList("value1", "value2"), "changed"));
-        expectedMap.put("id", new Item(fourFive, null, "changed"));
+        expectedMap.put("id", new Item(FORTY_FIVE, null, "changed"));
         expectedMap.put("key1", new Item("value1", null, "deleted"));
         expectedMap.put("key2", new Item("value2", null, "added"));
         expectedMap.put("numbers1", new Item(
-                Arrays.asList(1, 2, three, four),
-                Arrays.asList(1, 2, three, four),
+                Arrays.asList(1, 2, THREE, FOUR),
+                Arrays.asList(1, 2, THREE, FOUR),
                 "unchanged"));
         expectedMap.put("numbers2", new Item(
-                Arrays.asList(2, three, four, five),
-                Arrays.asList(twentyTwo, thirtyThree, fortyFour, fiftyFive),
+                Arrays.asList(2, THREE, FOUR, FIVE),
+                Arrays.asList(TWENTY_TWO, THIRTY_THREE, FORTY_FOUR, FIFTY_FIVE),
                 "changed"));
-        expectedMap.put("numbers3", new Item(Arrays.asList(three, four, five), null, "deleted"));
-        expectedMap.put("numbers4", new Item(Arrays.asList(four, five, six), null, "added"));
+        expectedMap.put("numbers3", new Item(Arrays.asList(THREE, FOUR, FIVE), null, "deleted"));
+        expectedMap.put("numbers4", new Item(Arrays.asList(FOUR, FIVE, SIX), null, "added"));
         expectedMap.put("obj1", new Item(new LinkedHashMap<String, Object>(Map.of(
                 "isNested", true,
                 "nestedKey", "value")), null, "added"));
         expectedMap.put("setting1", new Item("Some value", "Another value", "changed"));
-        expectedMap.put("setting2", new Item(twoHundred, threeHundred, "changed"));
+        expectedMap.put("setting2", new Item(TWO_HUNDRED, THREE_HUNDRED, "changed"));
         expectedMap.put("setting3", new Item(true, "none", "changed"));
     }
 
