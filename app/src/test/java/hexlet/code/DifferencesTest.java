@@ -56,8 +56,14 @@ class DifferencesTest {
         expectedMap.put("id", new Item(fourFive, null, "changed"));
         expectedMap.put("key1", new Item("value1", null, "deleted"));
         expectedMap.put("key2", new Item("value2", null, "added"));
-        expectedMap.put("numbers1", new Item(Arrays.asList(1, 2, three, four), Arrays.asList(1, 2, three, four), "unchanged"));
-        expectedMap.put("numbers2", new Item(Arrays.asList(2, three, four, five), Arrays.asList(twentyTwo, thirtyThree, fortyFour, fiftyFive), "changed"));
+        expectedMap.put("numbers1", new Item(
+                Arrays.asList(1, 2, three, four),
+                Arrays.asList(1, 2, three, four),
+                "unchanged"));
+        expectedMap.put("numbers2", new Item(
+                Arrays.asList(2, three, four, five),
+                Arrays.asList(twentyTwo, thirtyThree, fortyFour, fiftyFive),
+                "changed"));
         expectedMap.put("numbers3", new Item(Arrays.asList(three, four, five), null, "deleted"));
         expectedMap.put("numbers4", new Item(Arrays.asList(four, five, six), null, "added"));
         expectedMap.put("obj1", new Item(new LinkedHashMap<String, Object>(Map.of(
