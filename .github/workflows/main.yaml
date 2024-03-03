@@ -15,7 +15,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: make test-gradle
+      - run: make test
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.0.0
         env:
