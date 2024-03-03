@@ -60,8 +60,10 @@ class DifferTest {
 
     public static Stream<Arguments> getExpectedStringsForNotFormats() {
         return Stream.of(
-                arguments(getPathByFileNameAndExpected("json1.json"), getPathByFileNameAndExpected("json2.json"), stylishExpectedDataString),
-                arguments(getPathByFileNameAndExpected("yaml1.yml"), getPathByFileNameAndExpected("yaml2.yml"), stylishExpectedDataString)
+                arguments(getPathByFileNameAndExpected("json1.json"), getPathByFileNameAndExpected("json2.json"),
+                        stylishExpectedDataString),
+                arguments(getPathByFileNameAndExpected("yaml1.yml"), getPathByFileNameAndExpected("yaml2.yml"),
+                        stylishExpectedDataString)
         );
     }
 

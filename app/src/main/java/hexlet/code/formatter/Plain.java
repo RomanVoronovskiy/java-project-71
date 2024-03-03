@@ -17,8 +17,8 @@ public class Plain {
         StringBuilder result = new StringBuilder();
 
         for (Map.Entry<String, Item> item : differ.entrySet()) {
-            String newValue = checkValue(item.getValue().getNewValue());
-            String oldValue = checkValue(item.getValue().getOldValue());
+            String newValue = createStringViewAfterCheckValue(item.getValue().getNewValue());
+            String oldValue = createStringViewAfterCheckValue(item.getValue().getOldValue());
             switch (item.getValue().getStatus()) {
                 case ADDED -> result.append("Property '").append(item.getKey())
                         .append("' was added with value: ").append(oldValue).append("\n");
@@ -35,7 +35,7 @@ public class Plain {
         return result.toString().trim();
     }
 
-    public static String checkValue(Object value) {
+    public static String createStringViewAfterCheckValue(Object value) {
         if (value instanceof Map || value instanceof List) {
             return "[complex value]";
         } else if (value == null) {

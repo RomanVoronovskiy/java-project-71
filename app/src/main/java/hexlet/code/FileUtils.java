@@ -6,10 +6,6 @@ import java.nio.file.Path;
 
 public class FileUtils {
 
-    public static final String JSON = "json";
-    public static final String YML = "yml";
-    public static final String YAML = "yaml";
-
     public static String readFile(String pathToFile) throws Exception {
         String content;
         Path pathFile;

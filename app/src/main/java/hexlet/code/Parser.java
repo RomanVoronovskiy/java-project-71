@@ -9,11 +9,11 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import java.util.Map;
 import java.util.TreeMap;
 
-import static hexlet.code.FileUtils.JSON;
-import static hexlet.code.FileUtils.YAML;
-import static hexlet.code.FileUtils.YML;
-
 public class Parser {
+
+    public static final String JSON = "json";
+    public static final String YML = "yml";
+    public static final String YAML = "yaml";
 
     public static Map<String, Object> getData(String content, String dataFormat) throws Exception {
         switch (dataFormat) {
