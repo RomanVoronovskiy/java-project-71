@@ -19,7 +19,7 @@ jobs:
         with:
           gradle-version: 8.4
       #      - run: ./gradlew checkstyleMain
-      - run: ./../app/gradlew test
+      - run: ./app/gradlew test
       - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
